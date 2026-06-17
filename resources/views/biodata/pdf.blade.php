@@ -5,78 +5,61 @@
     <title>Biodata Diri</title>
     <style>
         body {
-            font-family: "Times New Roman", Times, serif;
-            font-size: 16px;
-            color: black;
-            margin: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 13px;
+            color: #1a1a1a;
+            margin: 40px;
         }
-        
+
         .judul {
             text-align: center;
             font-weight: bold;
-            font-size: 18px;
-            margin-bottom: 10px;
+            font-size: 20px;
+            margin-bottom: 30px;
         }
 
-        hr {
-            border: none;
-            border-top: 1px solid black;
-            margin-bottom: 25px;
-        }
-
-        /* Tabel Utama untuk membagi layout Kiri (Foto) dan Kanan (Data) */
+        /* Tabel utama: kolom kiri foto 50%, kolom kanan data 50% */
         .tabel-utama {
             width: 100%;
             border-collapse: collapse;
         }
 
-        /* Pengaturan Kolom Kiri (FOTO) */
         .kolom-foto {
-            width: 25%;
+            width: 50%;
             vertical-align: top;
             text-align: center;
         }
-        
+
         .foto-diri {
-            width: 130px;
-            height: 170px;
-            object-fit: cover;
-            border: 1px solid black; /* Bingkai foto */
+            width: 180px;
+            height: auto;
+            border: 1px solid #ccc;
         }
 
-        /* Pengaturan Kolom Kanan (DATA) */
         .kolom-data {
-            width: 75%;
+            width: 50%;
             vertical-align: top;
         }
 
-        /* Pengaturan Tabel Data Diri agar rapi */
-        .tabel-data {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        .tabel-data td {
-            padding: 6px 0;
-            vertical-align: top;
+        .item {
+            margin-bottom: 18px;
         }
 
         .label {
-            width: 30%;
+            color: #333;
+            font-size: 13px;
+            margin-bottom: 2px;
         }
-        .titikdua {
-            width: 3%;
-            text-align: center;
-        }
+
         .nilai {
-            width: 67%;
+            font-weight: bold;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
-    <div class="judul">BIODATA MAHASISWA</div>
-    <hr>
+    <div class="judul">Biodata Diri</div>
 
     <table class="tabel-utama">
         <tr>
@@ -85,48 +68,45 @@
             </td>
 
             <td class="kolom-data">
-                <table class="tabel-data">
-                    <tr>
-                        <td class="label">Nama Lengkap</td>
-                        <td class="titikdua">:</td>
-                        <td class="nilai">{{ $biodata->nama }}</td>
-                    </tr>
-                    <tr>
-                        <td class="label">NIM</td>
-                        <td class="titikdua">:</td>
-                        <td class="nilai">{{ $biodata->nim }}</td>
-                    </tr>
-                    <tr>
-                        <td class="label">Jenis Kelamin</td>
-                        <td class="titikdua">:</td>
-                        <td class="nilai">{{ $biodata->jenis_kelamin }}</td>
-                    </tr>
-                    <tr>
-                        <td class="label">Tempat Lahir</td>
-                        <td class="titikdua">:</td>
-                        <td class="nilai">{{ $biodata->tempat_lahir }}</td>
-                    </tr>
-                    <tr>
-                        <td class="label">Tanggal Lahir</td>
-                        <td class="titikdua">:</td>
-                        <td class="nilai">{{ $biodata->tanggal_lahir }}</td>
-                    </tr>
-                    <tr>
-                        <td class="label">Program Studi</td>
-                        <td class="titikdua">:</td>
-                        <td class="nilai">{{ $biodata->program_studi }}</td>
-                    </tr>
-                    <tr>
-                        <td class="label">Email</td>
-                        <td class="titikdua">:</td>
-                        <td class="nilai">{{ $biodata->email }}</td>
-                    </tr>
-                    <tr>
-                        <td class="label">No. Telepon</td>
-                        <td class="titikdua">:</td>
-                        <td class="nilai">{{ $biodata->telepon }}</td>
-                    </tr>
-                </table>
+                <div class="item">
+                    <div class="label">Nama</div>
+                    <div class="nilai">{{ $biodata->nama }}</div>
+                </div>
+
+                <div class="item">
+                    <div class="label">NIM</div>
+                    <div class="nilai">{{ $biodata->nim }}</div>
+                </div>
+
+                <div class="item">
+                    <div class="label">Jenis Kelamin</div>
+                    <div class="nilai">{{ $biodata->jenis_kelamin }}</div>
+                </div>
+
+                <div class="item">
+                    <div class="label">Tempat Lahir</div>
+                    <div class="nilai">{{ $biodata->tempat_lahir }}</div>
+                </div>
+
+                <div class="item">
+                    <div class="label">Tanggal Lahir</div>
+                    <div class="nilai">{{ $biodata->tanggal_lahir }}</div>
+                </div>
+
+                <div class="item">
+                    <div class="label">Email</div>
+                    <div class="nilai">{{ $biodata->email }}</div>
+                </div>
+
+                <div class="item">
+                    <div class="label">Telepon</div>
+                    <div class="nilai">{{ $biodata->telepon }}</div>
+                </div>
+
+                <div class="item">
+                    <div class="label">Program Studi</div>
+                    <div class="nilai">{{ $biodata->program_studi }}</div>
+                </div>
             </td>
         </tr>
     </table>
